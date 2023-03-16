@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+/* search b0x */
+.contain{
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  .search-box input[type=text] {
+    border: none;
+    background: none;
+    z-index: 1;
+    width: 25px;
+    height: 15px;
+    transition: all 0.25s ease-in 0.25s;
+    color: transparent;
+    font-size: 0.75rem;
+    line-height: 15px;
+  }
+  .search-box input[type=text]:hover {
+    cursor: pointer;
+  }
+  .search-box input[type=text]:hover:focus {
+    cursor: pointer;
+  }
+  .search-box input[type=text]:hover + span {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .search-box input[type=text]:focus {
+    width: 100px;
+    padding: 0 10px;
+    outline: none;
+    color: white;
+    background: none;
+  }
+  .search-box input[type=text]:focus + span {
+    width: 100px;
+  }
+  .search-box input[type=text]:focus + span::before {
+    width: 2px;
+    opacity: 0;
+    transition: all 0.25s ease-in;
+  }
+  .search-box input[type=text] + span {
+    z-index: -1;
+    position: absolute;
+    border: 2px solid white;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    transition: all 0.25s ease-in 0.25s;
+    border-radius: 25px;
+    left: 0;
+  }
+  .search-box input[type=text] + span::before {
+    transition: all 0.25s ease-in 0.5s;
+    transform-origin: left top;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    border-radius: 5px;
+    background: white;
+    transform: rotate(45deg) translate(20px, -2px);
+  }
+
+
+
+
+    *{
+        margin: 0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(180deg, rgb(7, 7, 71), black);
+    }
+    #app{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    #app .container{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 550px;
+        padding: 10px 30px;
+        background: transparent;
+        background-color: rgba(255, 255 , 255  , 0.08);
+        backdrop-filter: blur(30px);
+        border-radius: 20px;
+        animation: animate 1s linear infinite;
+        margin-top: 15PX;
+    }
+    @keyframes animate{
+        0%{
+            box-shadow: 0px 0px 50px 4px rgba(255, 255, 255, 0.3);
+        }
+        100%{
+            box-shadow: 0px 0px 50px 4px rgb(17, 43, 190) ;
+        }
+    }
+    #app .container .heading{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin: 10px 0px 0px 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    #app .container .heading h2{ 
+        display: flex;
+        color: #fff;
+        font-size: 50px;
+        margin-top: 10px;
+    }
+    #app .container form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 20px 20px;
+        margin: 0px ;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    #app .container form label{
+        display: flex;
+        width: 100%;
+        height: 55px;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 130px;
+    }
+    #app .container form label i{
+        display: flex;
+        font-size: 25px;
+        color: rgb(17, 43, 190);
+    }
+    #app .container form label input{
+        display: flex;
+        height: 100%;
+        width: 85%;
+        font-weight: bold;
+        color: white;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-radius: 5px ;
+        padding: 0px 10px;
+    }
+    #app .container form label input:hover{
+        border: 2px solid rgb(17, 43, 190);
+    }
+    #app .container button{
+        border: none;
+        outline: none;
+        padding: 10px 30px ;
+        margin: 10px 10px;
+        background: rgb(17, 43, 190);
+        columns: #fff;
+        font-weight: bold;
+        font-size: 22px;
+        border-radius: 5px;
+        transition: 0.5s;
+        margin-top: -140px;
+    }
+    #app .container button:hover{
+        background: #fff;
+        color: #191919;
+        font-weight: bold;
+        box-shadow: 0px 4px 15px 6px rgba(255, 255,255,0.5);
+    }
+
+
+</style>
+
+</head>
+<body>
+    <a href=""><i class="fa fa-left-arrow" style="font-family: 'fontawesome'; color: white; position: absolute;"></i></a>
+    <div id="app">
+        <div class="container">
+            <div class="heading">
+                <h2>Login Page</h2>
+            </div>
+
+            <form id="form" action="index.html">
+
+                <label for="userId">
+                    <i name="person" class="fas fa-solid fa-person" style="margin-top: -195px;"></i>
+                    <input type="email" name="userId" id="userID" placeholder="Enter User Id" style="margin-top: -200px;" required="">
+                </label>
+                <br>
+                <label for="userId">
+                    <i name="password" class="fas fa-solid fa-eye" style="margin-top: -365px;"></i>
+                    <input type="password" name="password" id="password" placeholder="Enter Password" style="margin-top: -370px;" required="">
+                </label>
+                <br>
+
+                <button id="btn">Log In</button>
+
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>
